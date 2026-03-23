@@ -17,8 +17,8 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #e8e8e8;
+            background-color: #050505;
+            color: #e0e0e0;
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
         }
@@ -33,9 +33,9 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(10, 10, 10, 0.98);
+            background: rgba(8, 8, 8, 0.98);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(245, 197, 66, 0.3);
+            border-bottom: 1px solid rgba(245, 197, 66, 0.25);
         }
 
         .nav-wrapper {
@@ -83,15 +83,25 @@
 
         .btn-back {
             padding: 6px 18px;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(245, 197, 66, 0.12);
             border-radius: 40px;
             border: 1px solid rgba(245, 197, 66, 0.4);
+            color: #f5c542 !important;
+        }
+
+        .btn-waitlist-nav {
+            padding: 8px 24px;
+            background: #f5c542;
+            border-radius: 40px;
+            color: #1a1a1a !important;
+            font-weight: 700;
+            text-decoration: none;
         }
 
         .page-header {
             padding: 60px 0 30px;
-            background: radial-gradient(circle at 20% 30%, #0f0f0f, #050505);
-            border-bottom: 1px solid rgba(245, 197, 66, 0.2);
+            background: radial-gradient(circle at 20% 30%, #0c0c0c, #030303);
+            border-bottom: 1px solid rgba(245, 197, 66, 0.15);
         }
 
         .page-header h1 {
@@ -102,7 +112,7 @@
         }
 
         .page-header p {
-            color: #b0b0b0;
+            color: #aaa;
             font-size: 1.1rem;
             max-width: 700px;
         }
@@ -113,7 +123,7 @@
 
         .request-section {
             padding: 60px 0 90px;
-            background: #050505;
+            background: #030303;
         }
 
         .request-grid {
@@ -123,9 +133,9 @@
         }
 
         .info-card {
-            background: rgba(20, 20, 20, 0.8);
-            border: 1px solid rgba(245, 197, 66, 0.25);
-            border-radius: 32px;
+            background: rgba(18, 18, 18, 0.9);
+            border: 1px solid rgba(245, 197, 66, 0.2);
+            border-radius: 28px;
             padding: 32px;
             height: fit-content;
         }
@@ -152,13 +162,13 @@
             display: flex;
             gap: 16px;
             margin-bottom: 24px;
-            color: #d0d0d0;
+            color: #ccc;
         }
 
         .step-number {
             width: 32px;
             height: 32px;
-            background: rgba(245, 197, 66, 0.2);
+            background: rgba(245, 197, 66, 0.18);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -168,17 +178,17 @@
         }
 
         .payment-details {
-            background: rgba(245, 197, 66, 0.1);
+            background: rgba(245, 197, 66, 0.08);
             border-left: 3px solid #f5c542;
             padding: 20px;
-            border-radius: 20px;
+            border-radius: 18px;
             margin: 20px 0;
         }
 
         .payment-details p {
             margin: 8px 0;
             font-size: 0.95rem;
-            color: #e0e0e0;
+            color: #ddd;
         }
 
         .payment-details strong {
@@ -186,19 +196,19 @@
         }
 
         .support-note {
-            background: rgba(245, 197, 66, 0.08);
+            background: rgba(245, 197, 66, 0.06);
             border-left: 3px solid #f5c542;
             padding: 16px;
             border-radius: 16px;
             margin-top: 24px;
-            color: #d0d0d0;
+            color: #ccc;
         }
 
         .request-form-container {
-            background: rgba(20, 20, 20, 0.9);
+            background: rgba(15, 15, 15, 0.95);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(245, 197, 66, 0.35);
-            border-radius: 32px;
+            border: 1px solid rgba(245, 197, 66, 0.3);
+            border-radius: 28px;
             padding: 40px;
         }
 
@@ -210,10 +220,10 @@
         }
 
         .form-subtitle {
-            color: #b0b0b0;
+            color: #9a9a9a;
             margin-bottom: 28px;
             padding-bottom: 16px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .form-group {
@@ -225,7 +235,7 @@
             margin-bottom: 8px;
             font-weight: 600;
             font-size: 0.85rem;
-            color: #e0e0e0;
+            color: #ddd;
         }
 
         .form-group label .required {
@@ -237,9 +247,9 @@
         .form-group select {
             width: 100%;
             padding: 14px 18px;
-            background: #141414;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 20px;
+            background: #111;
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 18px;
             color: #ffffff;
             font-size: 0.95rem;
             transition: all 0.2s;
@@ -250,8 +260,8 @@
         .form-group select:focus {
             outline: none;
             border-color: #f5c542;
-            box-shadow: 0 0 0 2px rgba(245,197,66,0.25);
-            background: #1a1a1a;
+            box-shadow: 0 0 0 2px rgba(245,197,66,0.2);
+            background: #161616;
         }
 
         .coordinates-hint {
@@ -259,7 +269,7 @@
             gap: 12px;
             margin-top: 8px;
             font-size: 0.75rem;
-            color: #9a9a9a;
+            color: #8a8a8a;
         }
 
         .coordinates-hint i {
@@ -283,11 +293,11 @@
         }
 
         .btn-generate-coord {
-            background: rgba(245, 197, 66, 0.15);
+            background: rgba(245, 197, 66, 0.12);
             border: 1px solid rgba(245, 197, 66, 0.4);
             color: #f5c542;
             padding: 14px 20px;
-            border-radius: 20px;
+            border-radius: 18px;
             font-weight: 600;
             font-size: 0.85rem;
             cursor: pointer;
@@ -299,7 +309,7 @@
         }
 
         .btn-generate-coord:hover {
-            background: rgba(245, 197, 66, 0.25);
+            background: rgba(245, 197, 66, 0.22);
             border-color: #f5c542;
         }
 
@@ -311,7 +321,7 @@
         .location-status {
             margin-top: 8px;
             font-size: 0.75rem;
-            color: #9a9a9a;
+            color: #8a8a8a;
         }
 
         .btn-submit-offline {
@@ -339,7 +349,7 @@
 
         .form-note {
             font-size: 0.75rem;
-            color: #8a8a8a;
+            color: #7a7a7a;
             text-align: center;
             margin-top: 16px;
         }
@@ -362,12 +372,41 @@
         }
 
         .success-message p {
-            color: #b0b0b0;
+            color: #aaa;
+        }
+
+        .request-id-box {
+            background: rgba(245, 197, 66, 0.1);
+            border-radius: 20px;
+            padding: 16px;
+            margin: 20px 0;
+            text-align: left;
+            border: 1px solid rgba(245, 197, 66, 0.25);
+        }
+
+        .request-id-box p {
+            margin: 6px 0;
+            color: #ddd;
+        }
+
+        .request-id-box strong {
+            color: #f5c542;
+        }
+
+        .ref-number {
+            background: rgba(245, 197, 66, 0.15);
+            padding: 8px 16px;
+            border-radius: 40px;
+            display: inline-block;
+            font-family: monospace;
+            font-size: 1rem;
+            color: #f5c542;
+            letter-spacing: 1px;
         }
 
         footer {
             padding: 48px 0 32px;
-            background: #030303;
+            background: #020202;
             border-top: 1px solid rgba(255,255,255,0.05);
         }
 
@@ -378,7 +417,7 @@
             flex-wrap: wrap;
             gap: 24px;
             padding-bottom: 32px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
             margin-bottom: 24px;
         }
 
@@ -389,7 +428,7 @@
         }
 
         .footer-links a, .footer-legal a {
-            color: #9a9a9a;
+            color: #8a8a8a;
             text-decoration: none;
             font-size: 0.85rem;
         }
@@ -399,9 +438,13 @@
         }
 
         .footer-social a {
-            color: #b0b0b0;
+            color: #9a9a9a;
             margin-left: 18px;
             font-size: 1.2rem;
+        }
+
+        .footer-social a:hover {
+            color: #f5c542;
         }
 
         .footer-bottom {
@@ -410,7 +453,7 @@
             flex-wrap: wrap;
             gap: 16px;
             font-size: 0.75rem;
-            color: #7a7a7a;
+            color: #6a6a6a;
         }
 
         .back-link {
@@ -421,6 +464,10 @@
             text-decoration: none;
             margin-bottom: 24px;
             font-weight: 500;
+        }
+
+        .back-link:hover {
+            color: #ffda6a;
         }
 
         @media (max-width: 900px) {
@@ -455,8 +502,8 @@
             <a href="index.html#tiers">Credits</a>
             <a href="index.html#pricing">Pricing</a>
             <a href="index.html#support">Support</a>
-            <a href="offline-request.html" class="btn-back" style="background: rgba(245,197,66,0.2);">Manual Request</a>
-            <a href="index.html#waitlist" class="btn-waitlist-nav" style="background:#f5c542; padding:8px 24px; border-radius:40px; color:#1a1a1a; font-weight:700;">Join Waitlist</a>
+            <a href="offline-request.html" class="btn-back" style="background: rgba(245,197,66,0.18);">Manual Request</a>
+            <a href="index.html#waitlist" class="btn-waitlist-nav">Join Waitlist</a>
         </div>
     </div>
 </nav>
@@ -504,6 +551,7 @@
                         <p class="form-subtitle">We'll verify payment and deliver your geological insights</p>
                         
                         <form id="offlineRequestForm" action="https://formspree.io/f/xykdbdqd" method="POST">
+                            <!-- Location Data with Generate Coordinates Button -->
                             <div class="form-group">
                                 <label><i class="fas fa-map-marker-alt"></i> Coordinates / Location <span class="required">*</span></label>
                                 <div class="coord-input-group">
@@ -557,18 +605,18 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>Full Name <span class="required">*</span></label>
-                                    <input type="text" name="fullName" placeholder="Your full name" required>
+                                    <input type="text" id="fullName" name="fullName" placeholder="Your full name" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Phone Number <span class="required">*</span></label>
-                                    <input type="tel" name="phoneNumber" placeholder="024 XXXX XXX" required>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="024 XXXX XXX" required>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label>Email Address <span class="required">*</span></label>
-                                    <input type="email" name="email" placeholder="you@example.com" required>
+                                    <input type="email" id="emailAddress" name="email" placeholder="you@example.com" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Preferred Report Type</label>
@@ -588,6 +636,7 @@
                             <input type="hidden" name="_subject" value="NOGUESS Offline Request - Manual Submission">
                             <input type="hidden" name="_next" value="#offline-success">
                             <input type="hidden" id="offlineTimestamp" name="timestamp">
+                            <input type="hidden" id="requestId" name="requestId">
                             <input type="hidden" name="paymentReferenceCode" value="622700">
                             <input type="hidden" name="merchantNumber" value="0246142765">
                             
@@ -604,7 +653,13 @@
                         <i class="fas fa-check-circle"></i>
                         <h3>Request Received!</h3>
                         <p>Thank you for submitting your offline request. Our geological team will verify your payment and transaction ID.</p>
-                        <p style="margin-top: 12px;">We'll send your AI gold intelligence report within 24 hours to your email/WhatsApp.</p>
+                        <div class="request-id-box" id="successDetails">
+                            <p><strong><i class="fas fa-user"></i> Name:</strong> <span id="confirmName">-</span></p>
+                            <p><strong><i class="fas fa-map-pin"></i> Coordinates:</strong> <span id="confirmCoords">-</span></p>
+                            <p><strong><i class="fas fa-hashtag"></i> Transaction ID:</strong> <span id="confirmTxId">-</span></p>
+                            <p><strong><i class="fas fa-id-card"></i> Request ID:</strong> <span id="confirmRequestId" class="ref-number">-</span></p>
+                        </div>
+                        <p>We'll send your AI gold intelligence report within 24 hours to your email/WhatsApp.</p>
                         <p style="margin-top: 12px;">📞 For urgent follow-up: <strong style="color:#f5c542;">055 555 6964</strong> (Call/WhatsApp)</p>
                         <button onclick="resetForm()" style="margin-top: 20px; background: #f5c542; border: none; padding: 10px 24px; border-radius: 40px; font-weight: 600; cursor: pointer; color: #1a1a1a;">Submit another request</button>
                     </div>
@@ -638,13 +693,25 @@
 </footer>
 
 <script>
+    // Generate unique Request ID
+    function generateRequestId(name) {
+        const date = new Date();
+        const year = date.getFullYear().toString().slice(-2);
+        const month = (date.getMonth() + 1).toString().padStart(2, '0');
+        const day = date.getDate().toString().padStart(2, '0');
+        const random = Math.floor(Math.random() * 10000).toString().padStart(4, '0');
+        const nameInitials = name ? name.substring(0, 3).toUpperCase().replace(/[^A-Z]/g, '') : 'XXX';
+        return `NOG-${year}${month}${day}-${nameInitials}-${random}`;
+    }
+
+    // Geolocation function
     const generateBtn = document.getElementById('generateCoordBtn');
     const coordsInput = document.getElementById('offlineCoordinates');
     const locationStatus = document.getElementById('locationStatus');
     
     function getLocation() {
         if (!navigator.geolocation) {
-            locationStatus.innerHTML = '<i class="fas fa-exclamation-triangle" style="color:#ff8888;"></i> Geolocation not supported. Please enter manually.';
+            locationStatus.innerHTML = '<i class="fas fa-exclamation-triangle" style="color:#f5c542;"></i> Geolocation not supported. Please enter manually.';
             return;
         }
         generateBtn.disabled = true;
@@ -671,7 +738,7 @@
                 if(error.code === 1) msg = 'Permission denied. Please enable location access and try again.';
                 else if(error.code === 2) msg = 'Location unavailable. Please enter coordinates manually.';
                 else msg = 'Location timeout. Please try again.';
-                locationStatus.innerHTML = '<i class="fas fa-exclamation-triangle" style="color:#ff8888;"></i> ' + msg;
+                locationStatus.innerHTML = '<i class="fas fa-exclamation-triangle" style="color:#f5c542;"></i> ' + msg;
                 generateBtn.innerHTML = '<i class="fas fa-location-dot"></i> Get My Location';
                 generateBtn.disabled = false;
             },
@@ -680,6 +747,7 @@
     }
     generateBtn.addEventListener('click', getLocation);
     
+    // Custom amount handler
     const amountSelect = document.getElementById('offlineAmount');
     const customAmount = document.getElementById('offlineCustomAmount');
     amountSelect.addEventListener('change', function() {
@@ -694,6 +762,7 @@
     });
     customAmount.style.display = 'none';
     
+    // Form submission
     const offlineForm = document.getElementById('offlineRequestForm');
     const offlineWrapper = document.getElementById('requestFormWrapper');
     const offlineSuccess = document.getElementById('offlineSuccessMsg');
@@ -701,32 +770,67 @@
     
     offlineForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        
+        const fullName = document.getElementById('fullName').value.trim();
         const txId = document.getElementById('offlineTxId').value.trim();
         const coords = coordsInput.value.trim();
+        const phone = document.getElementById('phoneNumber').value.trim();
+        const email = document.getElementById('emailAddress').value.trim();
+        
+        if(!fullName) { alert('Please enter your full name'); return; }
         if(!coords) { alert('Please enter coordinates or use "Get My Location"'); return; }
         if(!txId) { alert('Please enter MTN MoMo Transaction ID'); return; }
+        if(!phone) { alert('Please enter your phone number'); return; }
+        if(!email) { alert('Please enter your email address'); return; }
         
+        // Generate unique Request ID
+        const requestId = generateRequestId(fullName);
+        document.getElementById('requestId').value = requestId;
         document.getElementById('offlineTimestamp').value = new Date().toISOString();
+        
         offlineSubmitBtn.disabled = true;
         offlineSubmitBtn.innerHTML = '<i class="fas fa-spinner fa-pulse"></i> Submitting...';
         
         const fd = new FormData(offlineForm);
+        
         try {
-            const res = await fetch(offlineForm.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+            const res = await fetch(offlineForm.action, { 
+                method: 'POST', 
+                body: fd, 
+                headers: { 'Accept': 'application/json' } 
+            });
+            
             if(res.ok) {
-                const requestRecord = { coords, txId, timestamp: new Date().toISOString() };
+                // Store in localStorage
+                const requestRecord = { 
+                    requestId, fullName, coords, txId, phone, email, 
+                    timestamp: new Date().toISOString() 
+                };
                 let requests = JSON.parse(localStorage.getItem('noguess_offline_requests') || '[]');
                 requests.push(requestRecord);
                 localStorage.setItem('noguess_offline_requests', JSON.stringify(requests));
+                
+                // Update success message with captured data
+                document.getElementById('confirmName').innerHTML = fullName;
+                document.getElementById('confirmCoords').innerHTML = coords;
+                document.getElementById('confirmTxId').innerHTML = txId;
+                document.getElementById('confirmRequestId').innerHTML = requestId;
                 
                 offlineWrapper.style.display = 'none';
                 offlineSuccess.style.display = 'block';
                 offlineForm.reset();
                 customAmount.style.display = 'none';
                 amountSelect.value = '';
-            } else alert('Error submitting. Please try again or WhatsApp 0555556964');
-        } catch(err) { alert('Network error. Please check your connection and try again.'); }
-        finally { offlineSubmitBtn.disabled = false; offlineSubmitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Request'; }
+                coordsInput.value = '';
+            } else {
+                alert('Error submitting. Please try again or WhatsApp 0555556964');
+            }
+        } catch(err) { 
+            alert('Network error. Please check your connection and try again.'); 
+        } finally { 
+            offlineSubmitBtn.disabled = false; 
+            offlineSubmitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Submit Request'; 
+        }
     });
     
     window.resetForm = function() {
@@ -737,7 +841,8 @@
         amountSelect.value = '';
         coordsInput.value = '';
         locationStatus.innerHTML = '<i class="fas fa-lightbulb"></i> Click "Get My Location" to auto-capture your current GPS coordinates.';
-        document.getElementById('offlineTimestamp').value = new Date().toISOString();
+        document.getElementById('offlineTimestamp').value = '';
+        document.getElementById('requestId').value = '';
     };
     
     if (window.location.hash === '#offline-success') {
@@ -745,9 +850,10 @@
         offlineSuccess.style.display = 'block';
     }
     
+    // Mobile hint
     if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
         const hint = document.createElement('div');
-        hint.style.cssText = 'background: rgba(245,197,66,0.1); padding: 8px 12px; border-radius: 12px; margin-top: 8px; font-size: 0.7rem; color: #f5c542; text-align: center;';
+        hint.style.cssText = 'background: rgba(245,197,66,0.08); padding: 8px 12px; border-radius: 12px; margin-top: 8px; font-size: 0.7rem; color: #f5c542; text-align: center;';
         hint.innerHTML = '<i class="fas fa-mobile-alt"></i> For best results, enable GPS/location services on your phone.';
         document.querySelector('.coord-input-group').after(hint);
     }
