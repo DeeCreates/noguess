@@ -1,9 +1,992 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta http-equiv="refresh" content="0; url=noguess.html">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>NOGUESS — Gold Intelligence for Ghana | AI-Powered Exploration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e8e8e8;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(245, 197, 66, 0.3);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff 30%, #f5c542 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #f5c542;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #c0c0c0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #f5c542;
+        }
+
+        .btn-signin {
+            padding: 6px 18px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 40px;
+            border: 1px solid rgba(245, 197, 66, 0.4);
+        }
+
+        .btn-waitlist-nav {
+            padding: 8px 24px;
+            background: #f5c542;
+            border-radius: 40px;
+            color: #1a1a1a !important;
+            font-weight: 700;
+        }
+
+        .btn-offline-nav {
+            padding: 8px 24px;
+            background: rgba(245, 197, 66, 0.15);
+            border-radius: 40px;
+            border: 1px solid rgba(245, 197, 66, 0.4);
+            color: #f5c542 !important;
+            font-weight: 600;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 85vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at 20% 30%, #0f0f0f, #050505);
+            border-bottom: 1px solid rgba(245, 197, 66, 0.2);
+        }
+
+        .hero-content {
+            max-width: 720px;
+            padding: 60px 0;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 197, 66, 0.12);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(245, 197, 66, 0.4);
+            border-radius: 100px;
+            padding: 6px 18px;
+            margin-bottom: 28px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #f5c542;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 4.6rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            letter-spacing: -1.5px;
+            color: #ffffff;
+        }
+
+        .gold-text {
+            background: linear-gradient(120deg, #f5c542, #ffea9e, #f5c542);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            max-width: 560px;
+            line-height: 1.5;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .btn-primary {
+            background: #f5c542;
+            color: #1a1a1a;
+            padding: 14px 32px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(245,197,66,0.2);
+        }
+
+        .btn-primary:hover {
+            background: #ffda6a;
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 14px 32px;
+            border-radius: 40px;
+            color: #e0e0e0;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #f5c542;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 56px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-stat h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #f5c542;
+            margin-bottom: 4px;
+        }
+
+        .hero-stat p {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            color: #9a9a9a;
+            margin: 0;
+        }
+
+        /* Waitlist section */
+        .waitlist-section {
+            padding: 100px 0;
+            background: linear-gradient(0deg, #050505, #0f0f0f);
+            border-bottom: 1px solid rgba(245, 197, 66, 0.1);
+        }
+
+        .waitlist-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .waitlist-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .waitlist-content h2 span {
+            color: #f5c542;
+        }
+
+        .waitlist-content p {
+            color: #b0b0b0;
+            margin-bottom: 32px;
+            font-size: 1rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+            color: #d0d0d0;
+        }
+
+        .benefit-item i {
+            color: #f5c542;
+            font-size: 1rem;
+            width: 24px;
+        }
+
+        .waitlist-form-container {
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(245, 197, 66, 0.35);
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: 0 25px 45px rgba(0,0,0,0.5);
+        }
+
+        .form-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .form-subtitle {
+            color: #aaa;
+            margin-bottom: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            background: #141414;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 20px;
+            color: #ffffff;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #f5c542;
+            box-shadow: 0 0 0 2px rgba(245,197,66,0.2);
+            background: #1a1a1a;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .btn-waitlist-large {
+            width: 100%;
+            padding: 16px;
+            background: #f5c542;
+            border: none;
+            border-radius: 40px;
+            font-weight: 800;
+            font-size: 1rem;
+            cursor: pointer;
+            margin: 16px 0 12px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #1a1a1a;
+        }
+
+        .btn-waitlist-large:hover {
+            background: #ffda6a;
+            transform: translateY(-2px);
+        }
+
+        .form-note {
+            font-size: 0.75rem;
+            color: #8a8a8a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .success-message i {
+            font-size: 3rem;
+            color: #f5c542;
+            margin-bottom: 16px;
+        }
+
+        /* Tiers & Pricing */
+        .tiers, .pricing {
+            padding: 90px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .section-header h2 {
+            font-size: 2.3rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .section-header p {
+            color: #b0b0b0;
+        }
+
+        .tier-grid, .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .tier-card, .pricing-card {
+            background: rgba(20,20,20,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 28px;
+            padding: 28px;
+            transition: all 0.25s;
+        }
+
+        .tier-card:hover, .pricing-card:hover {
+            border-color: rgba(245,197,66,0.4);
+            transform: translateY(-4px);
+        }
+
+        .tier-icon {
+            width: 52px;
+            height: 52px;
+            background: rgba(245,197,66,0.1);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #f5c542;
+            margin-bottom: 20px;
+        }
+
+        .tier-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .tier-credits {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #f5c542;
+            margin-bottom: 12px;
+        }
+
+        .tier-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 12px;
+            font-size: 0.85rem;
+            color: #ccc;
+        }
+
+        .pricing-card.featured {
+            border: 1px solid #f5c542;
+            background: #111;
+            position: relative;
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: #f5c542;
+            color: #1a1a1a;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 4px 16px;
+            border-radius: 40px;
+        }
+
+        .pricing-price {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin: 12px 0 4px;
+            color: #ffffff;
+        }
+
+        .pricing-credits {
+            display: inline-block;
+            background: rgba(245,197,66,0.15);
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: #f5c542;
+            margin: 12px 0;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .pricing-features li {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: #ccc;
+            font-size: 0.85rem;
+        }
+
+        .btn-pricing {
+            width: 100%;
+            padding: 12px;
+            border-radius: 40px;
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #e0e0e0;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-pricing.featured {
+            background: #f5c542;
+            color: #1a1a1a;
+            border: none;
+        }
+
+        .btn-pricing:hover {
+            background: rgba(245,197,66,0.2);
+            border-color: #f5c542;
+        }
+
+        /* Support Section */
+        .support {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            margin-top: 40px;
+        }
+
+        .support-card {
+            text-align: center;
+            background: rgba(20,20,20,0.4);
+            border-radius: 28px;
+            padding: 32px 24px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .support-icon {
+            width: 64px;
+            height: 64px;
+            background: rgba(245,197,66,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.6rem;
+            color: #f5c542;
+        }
+
+        .support-card h3 {
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .support-link {
+            color: #f5c542;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0 32px;
+            background: #030303;
+        }
+
+        .footer-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a, .footer-legal a {
+            color: #9a9a9a;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .footer-links a:hover, .footer-legal a:hover {
+            color: #f5c542;
+        }
+
+        .footer-social a {
+            color: #b0b0b0;
+            margin-left: 18px;
+            font-size: 1.2rem;
+        }
+
+        .footer-social a:hover {
+            color: #f5c542;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.75rem;
+            color: #7a7a7a;
+        }
+
+        /* Modals */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: #121212;
+            border-radius: 32px;
+            padding: 32px;
+            max-width: 420px;
+            width: 90%;
+            border: 1px solid rgba(245,197,66,0.3);
+        }
+
+        .payment-detail {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 20px 0;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .phone-input {
+            background: #1a1a1a;
+            border-radius: 20px;
+            padding: 12px 16px;
+            margin: 20px 0;
+        }
+
+        .phone-field {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-pay {
+            width: 100%;
+            padding: 14px;
+            background: #f5c542;
+            border: none;
+            border-radius: 40px;
+            font-weight: 700;
+            cursor: pointer;
+            color: #1a1a1a;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #f5c542;
+            border-radius: 50%;
+            animation: pulse 1.2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; transform: scale(0.8);}
+            50% { opacity: 1; transform: scale(1);}
+        }
+
+        @media (max-width: 900px) {
+            .waitlist-grid, .tier-grid, .pricing-grid, .support-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hero-stats {
+                gap: 28px;
+            }
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirecting to <a href="noguess.html">NOGUESS</a>...</p>
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="index.html" style="text-decoration: none;"><div class="logo">NO<span>GUESS</span></div></a>
+        <div class="nav-links">
+            <a href="#tiers">Credits</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#support">Support</a>
+            <a href="offline-request.html" class="btn-offline-nav"><i class="fas fa-file-alt"></i> Manual Request</a>
+            <a href="#" class="btn-signin">Sign In</a>
+            <a href="#waitlist" class="btn-waitlist-nav"><i class="fas fa-gem"></i> Join Waitlist</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-microchip"></i> AI-POWERED GEOLOGY</div>
+                <h1>Stop guessing.<br><span class="gold-text">Start finding.</span></h1>
+                <p>Enter any coordinates in Ghana. Get instant AI analysis based on 125+ years of geological data, historical mining activity, and satellite imagery.</p>
+                <div class="button-group">
+                    <a href="#waitlist" class="btn-primary"><i class="fas fa-paper-plane"></i> Join the Waitlist</a>
+                    <a href="offline-request.html" class="btn-secondary"><i class="fas fa-file-alt"></i> Manual Request</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat"><h3>125+</h3><p>Years of Data</p></div>
+                    <div class="hero-stat"><h3>92%</h3><p>Accuracy Rate</p></div>
+                    <div class="hero-stat"><h3>50 GHS</h3><p>Starting Price</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="waitlist" class="waitlist-section">
+        <div class="container">
+            <div class="waitlist-grid">
+                <div class="waitlist-content">
+                    <h2>Be first to <span>discover gold</span> with AI</h2>
+                    <p>Early access to NOGUESS means you get 2 free credits on launch, priority support, and exclusive pricing. Transform exploration with machine learning trained on Ghana's richest belts.</p>
+                    <div class="benefit-item"><i class="fas fa-check-circle"></i> <span>Early access + 2 free credits</span></div>
+                    <div class="benefit-item"><i class="fas fa-check-circle"></i> <span>Priority support for 3 months</span></div>
+                    <div class="benefit-item"><i class="fas fa-check-circle"></i> <span>Monthly geological insights newsletter</span></div>
+                    <div class="benefit-item"><i class="fas fa-check-circle"></i> <span>Exclusive launch pricing</span></div>
+                </div>
+                <div class="waitlist-form-container" id="waitlistContainer">
+                    <div id="waitlistFormWrapper">
+                        <h3 class="form-title">Secure your spot</h3>
+                        <p class="form-subtitle">Get notified when we launch</p>
+                        <form id="waitlistForm" action="https://formspree.io/f/xykdbdqd" method="POST">
+                            <div class="form-group"><input type="text" name="name" placeholder="Full name *" required></div>
+                            <div class="form-group"><input type="email" name="email" placeholder="Email address *" required></div>
+                            <div class="form-row">
+                                <div class="form-group"><input type="tel" name="phone" placeholder="Phone (optional)"></div>
+                                <div class="form-group"><input type="text" name="company" placeholder="Company"></div>
+                            </div>
+                            <div class="form-group">
+                                <select name="role">
+                                    <option value="" disabled selected>Your role</option>
+                                    <option>Small-scale Miner</option>
+                                    <option>Large-scale Miner</option>
+                                    <option>Geologist</option>
+                                    <option>Investor</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-waitlist-large"><i class="fas fa-envelope"></i> Join Waitlist</button>
+                            <div class="form-note"><i class="fas fa-shield-alt"></i> No spam, ever. Unsubscribe anytime.</div>
+                        </form>
+                    </div>
+                    <div id="waitlistSuccess" style="display:none;" class="success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>You're on the list!</h3>
+                        <p>We'll notify you as soon as NOGUESS launches.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tiers" class="tiers">
+        <div class="container">
+            <div class="section-header"><h2>One credit system, three insights</h2><p>50 GHS = 3 credits. Spend them wisely.</p></div>
+            <div class="tier-grid">
+                <div class="tier-card"><div class="tier-icon"><i class="fas fa-map"></i></div><div class="tier-name">Basic Scan</div><div class="tier-credits">3 credits</div><div class="tier-feature"><i class="fas fa-chart-line"></i> Surface geology & belt proximity</div><div class="tier-feature"><i class="fas fa-chart-simple"></i> 70% confidence, instant</div></div>
+                <div class="tier-card"><div class="tier-icon"><i class="fas fa-history"></i></div><div class="tier-name">Full History</div><div class="tier-credits">10 credits</div><div class="tier-feature"><i class="fas fa-draw-polygon"></i> Lineaments + galamsey history</div><div class="tier-feature"><i class="fas fa-flask"></i> 85% confidence, geochemical anomalies</div></div>
+                <div class="tier-card"><div class="tier-icon"><i class="fas fa-brain"></i></div><div class="tier-name">Expert Insight</div><div class="tier-credits">25 credits</div><div class="tier-feature"><i class="fas fa-crosshairs"></i> AI drilling targets & depth estimation</div><div class="tier-feature"><i class="fas fa-chart-line"></i> 95% confidence, exploration strategy</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header"><h2>Simple pricing, MTN MoMo</h2><p>Credits never expire. Pay instantly.</p></div>
+            <div class="pricing-grid">
+                <div class="pricing-card"><div class="pricing-name">Starter</div><div class="pricing-price">50 GHS</div><div class="pricing-credits">3 credits</div><ul class="pricing-features"><li><i class="fas fa-check-circle"></i> 1 Basic Scan</li><li><i class="fas fa-check-circle"></i> Email support</li></ul><button class="btn-pricing" onclick="openPayment('Starter',50,3)"><i class="fas fa-mobile-alt"></i> Buy with MoMo</button></div>
+                <div class="pricing-card featured"><div class="featured-badge">Popular</div><div class="pricing-name">Prospector</div><div class="pricing-price">200 GHS</div><div class="pricing-credits">12 credits</div><ul class="pricing-features"><li><i class="fas fa-check-circle"></i> 4 Basic Scans</li><li><i class="fas fa-check-circle"></i> 1 Full History</li><li><i class="fas fa-check-circle"></i> PDF export</li></ul><button class="btn-pricing featured" onclick="openPayment('Prospector',200,12)"><i class="fas fa-mobile-alt"></i> Buy with MoMo</button></div>
+                <div class="pricing-card"><div class="pricing-name">Enterprise</div><div class="pricing-price">500 GHS</div><div class="pricing-credits">35 credits</div><ul class="pricing-features"><li><i class="fas fa-check-circle"></i> 11 Basic Scans</li><li><i class="fas fa-check-circle"></i> 3 Full History</li><li><i class="fas fa-check-circle"></i> 1 Expert Insight</li></ul><button class="btn-pricing" onclick="openPayment('Enterprise',500,35)"><i class="fas fa-mobile-alt"></i> Buy with MoMo</button></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="support" class="support">
+        <div class="container">
+            <div class="section-header"><h2>How can we help?</h2><p>Ghana-based support, always ready</p></div>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon"><i class="fas fa-comment-dots"></i></div>
+                    <h3>Live Chat</h3>
+                    <p>Talk to our team in real-time</p>
+                    <a href="#" class="support-link">Start chat →</a>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon"><i class="fas fa-envelope"></i></div>
+                    <h3>Email Us</h3>
+                    <p>support@noguess.gh</p>
+                    <a href="mailto:support@noguess.gh" class="support-link">Send message →</a>
+                </div>
+                <div class="support-card">
+                    <div class="support-icon"><i class="fab fa-whatsapp"></i></div>
+                    <h3>WhatsApp</h3>
+                    <p>+233 55 555 6964</p>
+                    <a href="https://wa.me/233555556964" target="_blank" class="support-link">Chat on WhatsApp →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-main">
+            <div class="footer-logo">NO<span>GUESS</span></div>
+            <div class="footer-links">
+                <a href="#tiers">Credits</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#support">Support</a>
+                <a href="offline-request.html">Manual Request</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="https://wa.me/233555556964" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>© 2026 NOGUESS — Accra, Ghana | MoMo: 0246142765 (Ark-Modity Investment)</div>
+            <div class="footer-legal">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Payment Modal -->
+<div class="modal-overlay" id="paymentModal">
+    <div class="modal">
+        <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
+            <h3>Complete payment</h3>
+            <button onclick="closePaymentModal()" style="background:none; border:none; color:#aaa; font-size:1.4rem; cursor:pointer;">×</button>
+        </div>
+        <div class="payment-detail">
+            <div class="detail-row"><span>Package</span><span id="modalPackage">Starter</span></div>
+            <div class="detail-row"><span>Credits</span><span id="modalCredits" style="color:#f5c542;">3</span></div>
+            <div class="detail-row"><span>Amount</span><span id="modalAmount">50 GHS</span></div>
+        </div>
+        <div class="phone-input">
+            <label>MTN MoMo Number</label>
+            <div class="phone-field">
+                <span style="color:#f5c542;">+233</span>
+                <input type="tel" id="phoneNumber" placeholder="24 123 4567">
+            </div>
+        </div>
+        <button class="btn-pay" onclick="processPaymentNow()"><i class="fas fa-lock"></i> Pay now</button>
+        <p class="form-note" style="text-align:center; margin-top:12px;">Pay to 0246142765 (Ark-Modity Investment)</p>
+    </div>
+</div>
+
+<div class="modal-overlay" id="confirmationModal">
+    <div class="modal">
+        <div style="text-align:center;">
+            <div style="font-size:3rem; color:#f5c542;"><i class="fas fa-clock"></i></div>
+            <h3>Waiting for confirmation</h3>
+            <p>Approve payment on your mobile</p>
+            <div style="display:flex; gap:10px; justify-content:center; margin:24px 0;">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <button onclick="closeConfirmModal()" style="background:transparent; border:1px solid #f5c542; width:100%; padding:12px; border-radius:40px; color:#f5c542; cursor:pointer;">Cancel</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Waitlist form handler
+    const waitlistForm = document.getElementById('waitlistForm');
+    const waitlistWrapper = document.getElementById('waitlistFormWrapper');
+    const waitlistSuccess = document.getElementById('waitlistSuccess');
+    
+    if(waitlistForm) {
+        waitlistForm.addEventListener('submit', async(e) => {
+            e.preventDefault();
+            const fd = new FormData(waitlistForm);
+            try {
+                const res = await fetch(waitlistForm.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
+                if(res.ok) {
+                    waitlistWrapper.style.display = 'none';
+                    waitlistSuccess.style.display = 'block';
+                    waitlistForm.reset();
+                } else {
+                    alert('Submission error, please try again');
+                }
+            } catch(err) {
+                alert('Network error, please try again');
+            }
+        });
+    }
+
+    // Payment modal functions
+    let pendingPackage = '', pendingAmount = 0, pendingCredits = 0;
+    
+    function openPayment(pkg, amt, credits) {
+        pendingPackage = pkg;
+        pendingAmount = amt;
+        pendingCredits = credits;
+        document.getElementById('modalPackage').innerText = pkg;
+        document.getElementById('modalCredits').innerHTML = credits + ' credits';
+        document.getElementById('modalAmount').innerHTML = amt + ' GHS';
+        document.getElementById('paymentModal').classList.add('active');
+    }
+    
+    function closePaymentModal() {
+        document.getElementById('paymentModal').classList.remove('active');
+    }
+    
+    function closeConfirmModal() {
+        document.getElementById('confirmationModal').classList.remove('active');
+    }
+    
+    function processPaymentNow() {
+        let phone = document.getElementById('phoneNumber').value.trim();
+        if(!phone || phone.length < 8) {
+            alert('Enter valid MoMo number (e.g., 24XXXXXXX)');
+            return;
+        }
+        closePaymentModal();
+        document.getElementById('confirmationModal').classList.add('active');
+        setTimeout(() => {
+            closeConfirmModal();
+            alert(`✅ Payment simulated!\nPackage: ${pendingPackage}\nCredits: ${pendingCredits}\nConfirmation sent to +233${phone}. Credits will reflect instantly.`);
+        }, 5000);
+    }
+    
+    // Close modals when clicking outside
+    window.onclick = function(event) {
+        const paymentModal = document.getElementById('paymentModal');
+        const confirmationModal = document.getElementById('confirmationModal');
+        if(event.target === paymentModal) closePaymentModal();
+        if(event.target === confirmationModal) closeConfirmModal();
+    }
+    
+    // Smooth scroll for waitlist links
+    document.querySelectorAll('a[href="#waitlist"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
 </body>
 </html>
