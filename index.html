@@ -30,7 +30,7 @@
             padding: 0 24px;
         }
 
-        /* Navigation */
+        /* Navigation - no blue tones */
         nav {
             position: sticky;
             top: 0;
@@ -107,17 +107,50 @@
             font-weight: 600;
         }
 
-        /* Hero */
+        /* Hero with topography background - no blue colors */
         .hero {
             min-height: 85vh;
             position: relative;
             display: flex;
             align-items: center;
-            background: radial-gradient(circle at 20% 30%, #0f0f0f, #050505);
+            background: #050505;
             border-bottom: 1px solid rgba(245, 197, 66, 0.2);
+            overflow: hidden;
         }
-
+        
+        /* Topography background image overlay */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDE4MDAiIG9wYWNpdHk9IjAuMTUiPjxwYXRoIGZpbGw9IiNmNWM1NDIiIGQ9Ik0wLDBMMTIwMCwwTDEyMDAsMTgwMEwwLDE4MDBMMCwwWiIvPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y1YzU0MiIgc3Ryb2tlLXdpZHRoPSIxLjIiIGQ9Ik0wIDUwIEwxMjAwIDUwIE0wIDEwMCBMMTIwMCAxMDAgTTAgMTUwIEwxMjAwIDE1MCBNMCAyMDAgTDEyMDAgMjAwIE0wIDI1MCBMMTIwMCAyNTAgTTAgMzAwIEwxMjAwIDMwMCBNMCAzNTAgTDEyMDAgMzUwIE0wIDQwMCBMMTIwMCA0MDAgTTAgNDUwIEwxMjAwIDQ1MCBNMCA1MDAgTDEyMDAgNTAwIE0wIDU1MCBMMTIwMCA1NTAgTTAgNjAwIEwxMjAwIDYwMCBNMCA2NTAgTDEyMDAgNjUwIE0wIDcwMCBMMTIwMCA3MDAgTTAgNzUwIEwxMjAwIDc1MCBNMCA4MDAgTDEyMDAgODAwIE0wIDg1MCBMMTIwMCA4NTAgTTAgOTAwIEwxMjAwIDkwMCBNMCA5NTAgTDEyMDAgOTUwIE0wIDEwMDAgTDEyMDAgMTAwMCBNMCAxMDUwIEwxMjAwIDEwNTAgTTAgMTEwMCBMMTIwMCAxMTAwIE0wIDExNTAgTDEyMDAgMTE1MCBNMCAxMjAwIEwxMjAwIDEyMDAgTTAgMTI1MCBMMTIwMCAxMjUwIE0wIDEzMDAgTDEyMDAgMTMwMCBNMCAxMzUwIEwxMjAwIDEzNTAgTTAgMTQwMCBMMTIwMCAxNDAwIE0wIDE0NTAgTDEyMDAgMTQ1MCBNMCAxNTAwIEwxMjAwIDE1MDAgTTAgMTU1MCBMMTIwMCAxNTUwIE0wIDE2MDAgTDEyMDAgMTYwMCBNMCAxNjUwIEwxMjAwIDE2NTAgTTAgMTcwMCBMMTIwMCAxNzAwIE0wIDE3NTAgTDEyMDAgMTc1MCIvPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y1YzU0MiIgc3Ryb2tlLXdpZHRoPSIxLjIiIGQ9Ik0xMDAsMCBMMTAwLDE4MDBNMjAwLDAgTDIwMCwxODAwTTMwMCwwIEwzMDAsMTgwME00MDAsMCBMNDAwLDE4MDBNNTAwLDAgTDUwMCwxODAwTTYwMCwwIEw2MDAsMTgwME03MDAsMCBMNzAwLDE4MDBNODAwLDAgTDgwMCwxODAwTTkwMCwwIEw5MDAsMTgwME0xMDAwLDAgTDEwMDAsMTgwME0xMTAwLDAgTDExMDAsMTgwME0xMjAwLDAgTDEyMDAsMTgwMCIvPjxjaXJjbGUgY3g9IjUwMCIgY3k9IjQwMCIgcj0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y1YzU0MiIgc3Ryb2tlLXdpZHRoPSIxLjIiLz48Y2lyY2xlIGN4PSI4MDAiIGN5PSI3MDAiIHI9IjI4IiBmaWxsPSJub25lIiBzdHJva2U9IiNmNWM1NDIiIHN0cm9rZS13aWR0aD0iMS4yIi8+PGNpcmNsZSBjeD0iMzAwIiBjeT0iMTEwMCIgcj0iMjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y1YzU0MiIgc3Ryb2tlLXdpZHRoPSIxLjIiLz48Y2lyY2xlIGN4PSI5MDAiIGN5PSIxNTAwIiByPSIzMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZjVjNTQyIiBzdHJva2Utd2lkdGg9IjEuMiIvPjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Y1YzU0MiIgc3Ryb2tlLXdpZHRoPSIxLjUiIGQ9Ik0yMDAgMjAwIEwzNTAgMjUwIEw0MDAgMzUwIEw1MDAgMzAwIEw2MDAgMzUwIEw3MDAgMzAwIEw4MDAgMzUwIEw5MDAgNDAwIEwxMDAwIDQ1MCBNMTUwIDUwMCBMMjUwIDU1MCBMMzUwIDUwMCBMNDUwIDU1MCBMNTUwIDYwMCBMNjUwIDU4MCBMNzUwIDYwMCBMODUwIDYyMCBMOTUwIDYwMCBMMTA1MCA2MjAgTTUwIDkwMCBMMTUwIDg1MCBMMjUwIDkwMCBMMzUwIDg1MCBMNDUwIDkwMCBMNTUwIDk1MCBMNjUwIDkzMCBMNzUwIDk1MCBMODUwIDkzMCBMOTUwIDkwMCBMMTA1MCA5MjAgTTQwMCAxMjAwIEw1MDAgMTE1MCBMNjAwIDEyMDAgTDcwMCAxMTgwIEw4MDAgMTIwMCBMOTAwIDExODAgTDEwMDAgMTE1MCBMMTEwMCAxMTUwIE04MDAgMTYwMCBMOTAwIDE1NTAgTDEwMDAgMTU4MCBMMTEwMCAxNTUwIi8+PC9zdmc+');
+            background-repeat: repeat;
+            background-size: 280px;
+            background-position: center;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: 0;
+        }
+        
+        /* Dark gradient overlay to ensure readability */
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(5,5,5,0.85), #050505 85%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 720px;
             padding: 60px 0;
         }
@@ -242,7 +275,7 @@
             margin: 0;
         }
 
-        /* Waitlist section */
+        /* Waitlist section - no blue */
         .waitlist-section {
             padding: 100px 0;
             background: linear-gradient(0deg, #050505, #0f0f0f);
@@ -379,7 +412,7 @@
             margin-bottom: 16px;
         }
 
-        /* Tiers & Pricing */
+        /* Tiers & Pricing - updated tier descriptions */
         .tiers, .pricing {
             padding: 90px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -401,23 +434,24 @@
             color: #b0b0b0;
         }
 
-        .tier-grid, .pricing-grid {
+        .tier-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 28px;
         }
 
-        .tier-card, .pricing-card {
+        .tier-card {
             background: rgba(20,20,20,0.6);
             border: 1px solid rgba(255,255,255,0.08);
             border-radius: 28px;
-            padding: 28px;
+            padding: 32px 28px;
             transition: all 0.25s;
         }
 
-        .tier-card:hover, .pricing-card:hover {
-            border-color: rgba(245,197,66,0.4);
+        .tier-card:hover {
+            border-color: rgba(245,197,66,0.5);
             transform: translateY(-4px);
+            background: rgba(30,30,30,0.7);
         }
 
         .tier-icon {
@@ -434,26 +468,83 @@
         }
 
         .tier-name {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
+            font-size: 1.4rem;
+            font-weight: 800;
+            margin-bottom: 12px;
             color: #ffffff;
+        }
+        
+        .tier-quote {
+            font-style: italic;
+            font-size: 0.9rem;
+            color: #f5c542;
+            margin-bottom: 16px;
+            font-weight: 500;
+            border-left: 2px solid #f5c542;
+            padding-left: 12px;
         }
 
         .tier-credits {
-            font-size: 2rem;
-            font-weight: 800;
+            font-size: 1rem;
+            font-weight: 600;
+            background: rgba(245,197,66,0.2);
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 40px;
             color: #f5c542;
-            margin-bottom: 12px;
+            margin: 12px 0 16px;
         }
 
-        .tier-feature {
+        .tier-feature-list {
+            list-style: none;
+            margin-top: 16px;
+        }
+
+        .tier-feature-list li {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
-            margin-top: 12px;
+            margin-bottom: 14px;
             font-size: 0.85rem;
             color: #ccc;
+            line-height: 1.4;
+        }
+
+        .tier-feature-list li i {
+            color: #f5c542;
+            margin-top: 2px;
+            font-size: 0.75rem;
+        }
+        
+        .confidence-badge {
+            margin-top: 20px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #f5c542;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .pricing-card {
+            background: rgba(20,20,20,0.6);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 28px;
+            padding: 28px;
+            transition: all 0.25s;
+        }
+
+        .pricing-card:hover {
+            border-color: rgba(245,197,66,0.4);
+            transform: translateY(-4px);
         }
 
         .pricing-card.featured {
@@ -572,7 +663,6 @@
             font-weight: 500;
         }
 
-        /* Footer */
         footer {
             padding: 48px 0 32px;
             background: #030303;
@@ -624,7 +714,6 @@
             color: #7a7a7a;
         }
 
-        /* Modals */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -799,11 +888,11 @@
 
     <section id="tiers" class="tiers">
         <div class="container">
-            <div class="section-header"><h2>One credit system, three insights</h2><p>50 GHS = 3 credits. Spend them wisely.</p></div>
+            <div class="section-header"><h2>Intelligence tiers, instant clarity</h2><p>Credits: 50 GHS = 3 credits. Spend wisely.</p></div>
             <div class="tier-grid">
-                <div class="tier-card"><div class="tier-icon"><i class="fas fa-map"></i></div><div class="tier-name">Basic Scan</div><div class="tier-credits">3 credits</div><div class="tier-feature"><i class="fas fa-chart-line"></i> Surface geology & belt proximity</div><div class="tier-feature"><i class="fas fa-chart-simple"></i> 70% confidence, instant</div></div>
-                <div class="tier-card"><div class="tier-icon"><i class="fas fa-history"></i></div><div class="tier-name">Full History</div><div class="tier-credits">10 credits</div><div class="tier-feature"><i class="fas fa-draw-polygon"></i> Lineaments + galamsey history</div><div class="tier-feature"><i class="fas fa-flask"></i> 85% confidence, geochemical anomalies</div></div>
-                <div class="tier-card"><div class="tier-icon"><i class="fas fa-brain"></i></div><div class="tier-name">Expert Insight</div><div class="tier-credits">25 credits</div><div class="tier-feature"><i class="fas fa-crosshairs"></i> AI drilling targets & depth estimation</div><div class="tier-feature"><i class="fas fa-chart-line"></i> 95% confidence, exploration strategy</div></div>
+                <div class="tier-card"><div class="tier-icon"><i class="fas fa-bolt"></i></div><div class="tier-name">Quick Check</div><div class="tier-quote">“Is this land worth it?”</div><div class="tier-credits">10 Credits</div><ul class="tier-feature-list"><li><i class="fas fa-layer-group"></i> Surface geology</li><li><i class="fas fa-map-marker-alt"></i> Gold belt proximity</li><li><i class="fas fa-chart-simple"></i> Basic probability score</li></ul><div class="confidence-badge"><i class="fas fa-chart-line"></i> 70% Confidence • Instant</div></div>
+                <div class="tier-card"><div class="tier-icon"><i class="fas fa-gem"></i></div><div class="tier-name">Deep Insight</div><div class="tier-quote">“Where should I mine?”</div><div class="tier-credits">18 Credits</div><ul class="tier-feature-list"><li><i class="fas fa-draw-polygon"></i> Structural (lineament) analysis</li><li><i class="fas fa-history"></i> Past mining activity</li><li><i class="fas fa-chart-line"></i> Gold anomaly zones</li></ul><div class="confidence-badge"><i class="fas fa-chart-line"></i> 85% Confidence</div></div>
+                <div class="tier-card"><div class="tier-icon"><i class="fas fa-crown"></i></div><div class="tier-name">Expert Intelligence</div><div class="tier-quote">“How do I make money here?”</div><div class="tier-credits">25 Credits</div><ul class="tier-feature-list"><li><i class="fas fa-microchip"></i> AI drilling targets</li><li><i class="fas fa-chart-simple"></i> Depth estimation</li><li><i class="fas fa-chart-pie"></i> Mining strategy</li></ul><div class="confidence-badge"><i class="fas fa-chart-line"></i> 95% Confidence</div></div>
             </div>
         </div>
     </section>
@@ -823,24 +912,9 @@
         <div class="container">
             <div class="section-header"><h2>How can we help?</h2><p>Ghana-based support, always ready</p></div>
             <div class="support-grid">
-                <div class="support-card">
-                    <div class="support-icon"><i class="fas fa-comment-dots"></i></div>
-                    <h3>Live Chat</h3>
-                    <p>Talk to our team in real-time</p>
-                    <a href="#" class="support-link">Start chat →</a>
-                </div>
-                <div class="support-card">
-                    <div class="support-icon"><i class="fas fa-envelope"></i></div>
-                    <h3>Email Us</h3>
-                    <p>support@noguess.gh</p>
-                    <a href="mailto:support@noguess.gh" class="support-link">Send message →</a>
-                </div>
-                <div class="support-card">
-                    <div class="support-icon"><i class="fab fa-whatsapp"></i></div>
-                    <h3>WhatsApp</h3>
-                    <p>+233 55 555 6964</p>
-                    <a href="https://wa.me/233555556964" target="_blank" class="support-link">Chat on WhatsApp →</a>
-                </div>
+                <div class="support-card"><div class="support-icon"><i class="fas fa-comment-dots"></i></div><h3>Live Chat</h3><p>Talk to our team in real-time</p><a href="#" class="support-link">Start chat →</a></div>
+                <div class="support-card"><div class="support-icon"><i class="fas fa-envelope"></i></div><h3>Email Us</h3><p>support@noguess.gh</p><a href="mailto:support@noguess.gh" class="support-link">Send message →</a></div>
+                <div class="support-card"><div class="support-icon"><i class="fab fa-whatsapp"></i></div><h3>WhatsApp</h3><p>+233 55 555 6964</p><a href="https://wa.me/233555556964" target="_blank" class="support-link">Chat on WhatsApp →</a></div>
             </div>
         </div>
     </section>
@@ -848,145 +922,26 @@
 
 <footer>
     <div class="container">
-        <div class="footer-main">
-            <div class="footer-logo">NO<span>GUESS</span></div>
-            <div class="footer-links">
-                <a href="#tiers">Credits</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#support">Support</a>
-                <a href="offline-request.html">Manual Request</a>
-            </div>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="https://wa.me/233555556964" target="_blank"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div>© 2026 NOGUESS — Accra, Ghana | MoMo: 0246142765 (Ark-Modity Investment)</div>
-            <div class="footer-legal">
-                <a href="#">Privacy</a>
-                <a href="#">Terms</a>
-            </div>
-        </div>
+        <div class="footer-main"><div class="footer-logo">NO<span>GUESS</span></div><div class="footer-links"><a href="#tiers">Credits</a><a href="#pricing">Pricing</a><a href="#support">Support</a><a href="offline-request.html">Manual Request</a></div><div class="footer-social"><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-linkedin"></i></a><a href="https://wa.me/233555556964" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div>
+        <div class="footer-bottom"><div>© 2026 NOGUESS — Accra, Ghana | MoMo: 0246142765 (Ark-Modity Investment)</div><div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a></div></div>
     </div>
 </footer>
 
-<!-- Payment Modal -->
-<div class="modal-overlay" id="paymentModal">
-    <div class="modal">
-        <div style="display:flex; justify-content:space-between; margin-bottom:20px;">
-            <h3>Complete payment</h3>
-            <button onclick="closePaymentModal()" style="background:none; border:none; color:#aaa; font-size:1.4rem; cursor:pointer;">×</button>
-        </div>
-        <div class="payment-detail">
-            <div class="detail-row"><span>Package</span><span id="modalPackage">Starter</span></div>
-            <div class="detail-row"><span>Credits</span><span id="modalCredits" style="color:#f5c542;">3</span></div>
-            <div class="detail-row"><span>Amount</span><span id="modalAmount">50 GHS</span></div>
-        </div>
-        <div class="phone-input">
-            <label>MTN MoMo Number</label>
-            <div class="phone-field">
-                <span style="color:#f5c542;">+233</span>
-                <input type="tel" id="phoneNumber" placeholder="24 123 4567">
-            </div>
-        </div>
-        <button class="btn-pay" onclick="processPaymentNow()"><i class="fas fa-lock"></i> Pay now</button>
-        <p class="form-note" style="text-align:center; margin-top:12px;">Pay to 0246142765 (Ark-Modity Investment)</p>
-    </div>
-</div>
-
-<div class="modal-overlay" id="confirmationModal">
-    <div class="modal">
-        <div style="text-align:center;">
-            <div style="font-size:3rem; color:#f5c542;"><i class="fas fa-clock"></i></div>
-            <h3>Waiting for confirmation</h3>
-            <p>Approve payment on your mobile</p>
-            <div style="display:flex; gap:10px; justify-content:center; margin:24px 0;">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-            </div>
-            <button onclick="closeConfirmModal()" style="background:transparent; border:1px solid #f5c542; width:100%; padding:12px; border-radius:40px; color:#f5c542; cursor:pointer;">Cancel</button>
-        </div>
-    </div>
-</div>
+<div class="modal-overlay" id="paymentModal"><div class="modal"><div style="display:flex; justify-content:space-between; margin-bottom:20px;"><h3>Complete payment</h3><button onclick="closePaymentModal()" style="background:none; border:none; color:#aaa; font-size:1.4rem; cursor:pointer;">×</button></div><div class="payment-detail"><div class="detail-row"><span>Package</span><span id="modalPackage">Starter</span></div><div class="detail-row"><span>Credits</span><span id="modalCredits" style="color:#f5c542;">3</span></div><div class="detail-row"><span>Amount</span><span id="modalAmount">50 GHS</span></div></div><div class="phone-input"><label>MTN MoMo Number</label><div class="phone-field"><span style="color:#f5c542;">+233</span><input type="tel" id="phoneNumber" placeholder="24 123 4567"></div></div><button class="btn-pay" onclick="processPaymentNow()"><i class="fas fa-lock"></i> Pay now</button><p class="form-note" style="text-align:center; margin-top:12px;">Pay to 0246142765 (Ark-Modity Investment)</p></div></div>
+<div class="modal-overlay" id="confirmationModal"><div class="modal"><div style="text-align:center;"><div style="font-size:3rem; color:#f5c542;"><i class="fas fa-clock"></i></div><h3>Waiting for confirmation</h3><p>Approve payment on your mobile</p><div style="display:flex; gap:10px; justify-content:center; margin:24px 0;"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div><button onclick="closeConfirmModal()" style="background:transparent; border:1px solid #f5c542; width:100%; padding:12px; border-radius:40px; color:#f5c542; cursor:pointer;">Cancel</button></div></div></div>
 
 <script>
-    // Waitlist form handler
     const waitlistForm = document.getElementById('waitlistForm');
     const waitlistWrapper = document.getElementById('waitlistFormWrapper');
     const waitlistSuccess = document.getElementById('waitlistSuccess');
-    
-    if(waitlistForm) {
-        waitlistForm.addEventListener('submit', async(e) => {
-            e.preventDefault();
-            const fd = new FormData(waitlistForm);
-            try {
-                const res = await fetch(waitlistForm.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } });
-                if(res.ok) {
-                    waitlistWrapper.style.display = 'none';
-                    waitlistSuccess.style.display = 'block';
-                    waitlistForm.reset();
-                } else {
-                    alert('Submission error, please try again');
-                }
-            } catch(err) {
-                alert('Network error, please try again');
-            }
-        });
-    }
-
-    // Payment modal functions
+    if(waitlistForm) { waitlistForm.addEventListener('submit', async(e) => { e.preventDefault(); const fd = new FormData(waitlistForm); try { const res = await fetch(waitlistForm.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } }); if(res.ok) { waitlistWrapper.style.display = 'none'; waitlistSuccess.style.display = 'block'; waitlistForm.reset(); } else { alert('Submission error, please try again'); } } catch(err) { alert('Network error, please try again'); } }); }
     let pendingPackage = '', pendingAmount = 0, pendingCredits = 0;
-    
-    function openPayment(pkg, amt, credits) {
-        pendingPackage = pkg;
-        pendingAmount = amt;
-        pendingCredits = credits;
-        document.getElementById('modalPackage').innerText = pkg;
-        document.getElementById('modalCredits').innerHTML = credits + ' credits';
-        document.getElementById('modalAmount').innerHTML = amt + ' GHS';
-        document.getElementById('paymentModal').classList.add('active');
-    }
-    
-    function closePaymentModal() {
-        document.getElementById('paymentModal').classList.remove('active');
-    }
-    
-    function closeConfirmModal() {
-        document.getElementById('confirmationModal').classList.remove('active');
-    }
-    
-    function processPaymentNow() {
-        let phone = document.getElementById('phoneNumber').value.trim();
-        if(!phone || phone.length < 8) {
-            alert('Enter valid MoMo number (e.g., 24XXXXXXX)');
-            return;
-        }
-        closePaymentModal();
-        document.getElementById('confirmationModal').classList.add('active');
-        setTimeout(() => {
-            closeConfirmModal();
-            alert(`✅ Payment simulated!\nPackage: ${pendingPackage}\nCredits: ${pendingCredits}\nConfirmation sent to +233${phone}. Credits will reflect instantly.`);
-        }, 5000);
-    }
-    
-    // Close modals when clicking outside
-    window.onclick = function(event) {
-        const paymentModal = document.getElementById('paymentModal');
-        const confirmationModal = document.getElementById('confirmationModal');
-        if(event.target === paymentModal) closePaymentModal();
-        if(event.target === confirmationModal) closeConfirmModal();
-    }
-    
-    // Smooth scroll for waitlist links
-    document.querySelectorAll('a[href="#waitlist"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' });
-        });
-    });
+    function openPayment(pkg, amt, credits) { pendingPackage = pkg; pendingAmount = amt; pendingCredits = credits; document.getElementById('modalPackage').innerText = pkg; document.getElementById('modalCredits').innerHTML = credits + ' credits'; document.getElementById('modalAmount').innerHTML = amt + ' GHS'; document.getElementById('paymentModal').classList.add('active'); }
+    function closePaymentModal() { document.getElementById('paymentModal').classList.remove('active'); }
+    function closeConfirmModal() { document.getElementById('confirmationModal').classList.remove('active'); }
+    function processPaymentNow() { let phone = document.getElementById('phoneNumber').value.trim(); if(!phone || phone.length < 8) { alert('Enter valid MoMo number (e.g., 24XXXXXXX)'); return; } closePaymentModal(); document.getElementById('confirmationModal').classList.add('active'); setTimeout(() => { closeConfirmModal(); alert(`✅ Payment simulated!\nPackage: ${pendingPackage}\nCredits: ${pendingCredits}\nConfirmation sent to +233${phone}. Credits will reflect instantly.`); }, 5000); }
+    window.onclick = function(event) { const paymentModal = document.getElementById('paymentModal'); const confirmationModal = document.getElementById('confirmationModal'); if(event.target === paymentModal) closePaymentModal(); if(event.target === confirmationModal) closeConfirmModal(); }
+    document.querySelectorAll('a[href="#waitlist"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); document.getElementById('waitlist').scrollIntoView({ behavior: 'smooth' }); }); });
 </script>
 </body>
 </html>
